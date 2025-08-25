@@ -37,13 +37,6 @@ A simple yet effective Python script for generating secure, random passwords. Pe
 
 ---
 
-##  Dependencies
-No external dependencies—uses Python’s built-in `random` and `string` modules.
-
-> **Security Tip:** For increased security, consider using Python’s `secrets` module instead of `random`, as it is designed for generating cryptographically secure values :contentReference[oaicite:0]{index=0}.
-
----
-
 ##  How It Works
 The script performs the following steps:
 
@@ -53,16 +46,3 @@ The script performs the following steps:
 4. Randomly selects characters from this set to create the password.
 5. Outputs the final password to the console.
 
-##  Example Addition (Advanced Usage)
-
-If you're looking to upgrade the generator with cryptographic security, here’s a simple snippet using the `secrets` module:
-
-```python
-import secrets
-import string
-
-def generate_secure_password(length=16):
-    alphabet = string.ascii_letters + string.digits + string.punctuation
-    return ''.join(secrets.choice(alphabet) for _ in range(length))
-
-print(generate_secure_password())
